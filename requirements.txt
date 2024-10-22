@@ -1,0 +1,6 @@
+flask
+numpy
+torch
+transformers
+psutil
+gunicorn

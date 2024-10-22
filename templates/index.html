@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and other head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana or Phone?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Load the Orbitron font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <canvas id="starfield"></canvas>
+    <div class="container mt-3">
+        <div class="overlay">
+            <h1 class="title">Locate item on banana-phone coordinate system</h1>
+            <form id="similarity-form" class="form">
+                <input type="text" id="word" name="word" placeholder="Type a word..." required>
+                <button class="submit-button" type="submit">Enlighten Yourself</button>
+            </form>        
+        </div>
+        <div class="line-container">
+            <div class="side-container">
+                <img src="{{ url_for('static', filename='banana_2.png') }}" class="banana-image" alt="Banana">
+                <div class="percentage" id="banana-percentage">50%</div>
+            </div>
+            <div class="line-wrapper">
+                <div class="line" id="dynamic-line"></div>
+                <div class="marker" id="marker"></div>
+            </div>
+            <div class="side-container">
+                <img src="{{ url_for('static', filename='phone_1.png') }}" class="phone-image" alt="Phone">
+                <div class="percentage" id="phone-percentage">50%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include external JavaScript files -->
+    <script src="{{ url_for('static', filename='js/starfield.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/markerAnimation.js') }}" defer></script>
+
+</body>
+</html>
